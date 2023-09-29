@@ -42,6 +42,7 @@ const Register = () => {
             <LockIcon size="30" />
           </Avatar>
           <Typography
+            data-test="registerHeader"
             variant="h4"
             align="center"
             mb={2}

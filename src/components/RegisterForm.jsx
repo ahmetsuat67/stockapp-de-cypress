@@ -40,6 +40,7 @@ const SignUpForm = ({
       <Form>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <TextField
+            data-test="userName"
             label="User Name"
             name="username"
             id="userName"
@@ -52,6 +53,7 @@ const SignUpForm = ({
             error={touched.username && Boolean(errors.username)}
           />
           <TextField
+            data-test="firstName"
             label="First Name"
             name="first_name"
             id="firstName"
@@ -64,6 +66,7 @@ const SignUpForm = ({
             error={touched.first_name && Boolean(errors.first_name)}
           />
           <TextField
+            data-test="lastName"
             label="Last Name"
             name="last_name"
             id="last_name"
@@ -76,6 +79,7 @@ const SignUpForm = ({
             error={touched.last_name && Boolean(errors.last_name)}
           />
           <TextField
+            data-test="email"
             label="Email"
             name="email"
             id="email"
@@ -88,6 +92,7 @@ const SignUpForm = ({
             error={touched.email && Boolean(errors.email)}
           />
           <TextField
+            data-test="password"
             label="password"
             name="password"
             id="password"
@@ -100,6 +105,7 @@ const SignUpForm = ({
             error={touched.password && Boolean(errors.password)}
           />
           <TextField
+            data-test="password2"
             label="Confirm Password"
             name="password2"
             id="password2"
@@ -112,6 +118,7 @@ const SignUpForm = ({
             error={touched.password2 && Boolean(errors.password2)}
           />
           <Button
+            data-test="submitRegister"
             type="submit"
             variant="contained"
             size="large"
