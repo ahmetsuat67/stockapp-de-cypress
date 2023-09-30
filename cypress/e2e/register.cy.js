@@ -1,4 +1,8 @@
 describe('register', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/')
+    cy.viewport(1200, 1200);
+  })
   it('register test', () => {
     cy.visit('http://localhost:3000/')
     cy.url().should('include', '/')
@@ -17,5 +21,5 @@ describe('register', () => {
 
 
   })
-  
+
 })

@@ -77,6 +77,7 @@ export default function FirmModal({ open, handleClose, info, setInfo }) {
             component="form"
             onSubmit={handleSubmit}>
             <TextField
+              data-test="firmName"
               label="Firm Name"
               name="name"
               id="name"
@@ -87,6 +88,7 @@ export default function FirmModal({ open, handleClose, info, setInfo }) {
               required
             />
             <TextField
+              data-test="firmAddress"
               label="Address"
               name="address"
               id="address"
@@ -106,7 +108,7 @@ export default function FirmModal({ open, handleClose, info, setInfo }) {
               type="tel"
               required>
               {inputProps => (
-                <TextField {...inputProps} label="Phone" variant="outlined" />
+                <TextField data-test="firmPhone" {...inputProps} label="Phone" variant="outlined" />
               )}
             </InputMask>
             {/* <TextField
@@ -120,6 +122,7 @@ export default function FirmModal({ open, handleClose, info, setInfo }) {
               required
             /> */}
             <TextField
+              data-test="firmImage"
               label="Image"
               name="image"
               id="image"
@@ -129,7 +132,7 @@ export default function FirmModal({ open, handleClose, info, setInfo }) {
               onChange={handleChange}
               required
             />
-            <Button variant="contained" type="submit">
+            <Button data-test="firmsSbmt" variant="contained" type="submit">
               {info.id ? "Update Firm" : "Create Firm"}
             </Button>
           </Box>

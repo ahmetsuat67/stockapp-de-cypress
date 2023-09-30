@@ -63,10 +63,10 @@ const Firms = () => {
 
   return (
     <Container maxWidth="xl">
-      <Typography color="error" variant="h4" mb={3}>
+      <Typography data-test="firmsHeader" color="error" variant="h4" mb={3}>
         Firms
       </Typography>
-      <Button variant="contained" onClick={handleOpen}>
+      <Button data-test="firmsBtn" variant="contained" onClick={handleOpen}>
         New Firm
       </Button>
       <FirmModal

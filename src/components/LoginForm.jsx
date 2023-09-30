@@ -19,6 +19,7 @@ const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
     <Form>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <TextField
+          data-test="emailLogin"
           label="Email"
           name="email"
           id="email"
@@ -31,6 +32,7 @@ const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
           error={touched.email && Boolean(errors.email)}
         />
         <TextField
+          data-test="passwordLogin"
           label="password"
           name="password"
           id="password"
@@ -43,7 +45,8 @@ const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
           error={touched.password && Boolean(errors.password)}
         />
         {!loading ? (
-          <Button variant="contained" type="submit">
+          <Button data-test="sbmtLogin" variant="contained" type="submit">
+            
             Submit
           </Button>
         ) : (

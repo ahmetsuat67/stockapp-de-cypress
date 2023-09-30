@@ -71,7 +71,7 @@ const MenuListItems = () => {
         <ListItem key={item.title} disablePadding>
           <ListItemButton onClick={() => navigate(item.url)} sx={iconStyle}>
             <ListItemIcon>{item.icon}</ListItemIcon>
-            <ListItemText primary={item.title} />
+            <ListItemText data-test={"title"+ item.title} primary={item.title} />
           </ListItemButton>
         </ListItem>
       ))}
@@ -80,7 +80,7 @@ const MenuListItems = () => {
           <ListItem key={item.title} disablePadding>
             <ListItemButton sx={iconStyle} to={item.url} target="true">
               <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.title} />
+              <ListItemText  primary={item.title} />
             </ListItemButton>
           </ListItem>
         ))}

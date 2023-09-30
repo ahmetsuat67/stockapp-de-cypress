@@ -40,6 +40,7 @@ const Login = () => {
             <LockIcon size="30" />
           </Avatar>
           <Typography
+            data-test="loginHeader"
             variant="h4"
             align="center"
             mb={4}
