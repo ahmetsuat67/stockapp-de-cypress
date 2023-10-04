@@ -38,10 +38,10 @@ const Products = () => {
 
   return (
     <Container maxWidth="xl">
-      <Typography color="error" variant="h4" mb={3}>
+      <Typography data-test="productsHeader" color="error" variant="h4" mb={3}>
         Products
       </Typography>
-      <Button variant="contained" onClick={handleOpen}>
+      <Button data-test="productsBtn" variant="contained" onClick={handleOpen}>
         New Product
       </Button>
       <ProductModal open={open} handleClose={handleClose} info={info} setInfo={setInfo} />

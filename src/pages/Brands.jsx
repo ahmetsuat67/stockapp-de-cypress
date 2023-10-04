@@ -32,10 +32,10 @@ const Brands = () => {
 
   return (
     <div>
-      <Typography variant="h4" color="error" mb={3}>
+      <Typography data-test="brandsHeader" variant="h4" color="error" mb={3}>
         Brands
       </Typography>
-      <Button variant="contained" onClick={() => setOpen(true)}>
+      <Button data-test="brandsBtn" variant="contained" onClick={() => setOpen(true)}>
         New Brand
       </Button>
       <BrandModal

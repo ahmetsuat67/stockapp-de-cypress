@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <div>
-      <Typography variant='h4' color='error' align='center' mb={3}>Dashboard</Typography>
+      <Typography data-test="dashboardHeader" variant='h4' color='error' align='center' mb={3}>Dashboard</Typography>
       <KpiCards />
       <Charts />
     </div>

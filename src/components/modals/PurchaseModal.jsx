@@ -44,7 +44,7 @@ export default function PurchaseModal({ open, handleClose, info, setInfo }) {
             component="form"
             onSubmit={handleSubmit}>
             <FormControl>
-              <InputLabel variant="outlined" id="firm-select-label">
+              <InputLabel data-test='purchaseFirm' variant="outlined" id="firm-select-label">
                 Firm
               </InputLabel>
               <Select
@@ -60,7 +60,7 @@ export default function PurchaseModal({ open, handleClose, info, setInfo }) {
                 <hr />
                 {firms?.map(item => {
                   return (
-                    <MenuItem key={item.id} value={item.id}>
+                    <MenuItem data-test='firmName' key={item.id} value={item.id}>
                       {item.name}
                     </MenuItem>
                   );
@@ -68,7 +68,7 @@ export default function PurchaseModal({ open, handleClose, info, setInfo }) {
               </Select>
             </FormControl>
             <FormControl>
-              <InputLabel variant="outlined" id="brand-select-label">
+              <InputLabel data-test='purchaseBrand' variant="outlined" id="brand-select-label">
                 Brand
               </InputLabel>
               <Select
@@ -85,7 +85,7 @@ export default function PurchaseModal({ open, handleClose, info, setInfo }) {
                 <hr />
                 {brands?.map(item => {
                   return (
-                    <MenuItem key={item.id} value={item.id}>
+                    <MenuItem data-test='brandName' key={item.id} value={item.id}>
                       {item.name}
                     </MenuItem>
                   );
@@ -93,7 +93,7 @@ export default function PurchaseModal({ open, handleClose, info, setInfo }) {
               </Select>
             </FormControl>
             <FormControl>
-              <InputLabel variant="outlined" id="product-select-label">
+              <InputLabel data-test='salesProduct' variant="outlined" id="product-select-label">
                 Product
               </InputLabel>
               <Select
@@ -110,7 +110,7 @@ export default function PurchaseModal({ open, handleClose, info, setInfo }) {
                 <hr />
                 {products?.map(item => {
                   return (
-                    <MenuItem key={item.id} value={item.id}>
+                    <MenuItem data-test='productName' key={item.id} value={item.id}>
                       {item.name}
                     </MenuItem>
                   );
@@ -139,7 +139,7 @@ export default function PurchaseModal({ open, handleClose, info, setInfo }) {
               onChange={handleChange}
               required
             />
-            <Button type="submit" variant="contained" size="large">
+            <Button data-test='purchaseSbmt' type="submit" variant="contained" size="large">
               {info?.id ? "Update Purchase" : "Add New Purchase"}
             </Button>
           </Box>

@@ -30,15 +30,16 @@ export default function FirmCard({ firm, handleOpen, setInfo }) {
           {firm.address}
         </Typography>
       </CardContent> */}
-      <CardHeader title={firm.name} subheader={firm.address} />
+      <CardHeader data-test="firmCardName" title={firm.name} subheader={firm.address} />
       <CardMedia
+        data-test="firmCardImage"
         component="img"
         sx={{ height: 130, objectFit: "contain" }}
         image={firm.image}
         title={firm.name}
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography data-test="firmCardPhone" variant="body2" color="text.secondary">
           Phone : {firm.phone}
         </Typography>
       </CardContent>
@@ -51,6 +52,7 @@ export default function FirmCard({ firm, handleOpen, setInfo }) {
           gap: 2,
         }}>
         <EditIcon
+          data-test="editBtn"
           sx={{ cursor: "pointer", "&:hover": { color: "red" } }}
           onClick={() => {
             handleOpen();
@@ -58,6 +60,7 @@ export default function FirmCard({ firm, handleOpen, setInfo }) {
           }}
         />
         <DeleteOutlineIcon
+          data-test="deleteBtn"
           onClick={() => deleteStockData("firms", firm.id)}
           sx={{ cursor: "pointer", "&:hover": { color: "red" } }}
         />

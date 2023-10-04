@@ -40,11 +40,11 @@ const Sales = () => {
 
   return (
     <div>
-      <Typography variant="h4" color="error" mb={3}>
+      <Typography data-test='salesHeader' variant="h4" color="error" mb={3}>
         Sales
       </Typography>
 
-      <Button variant="contained" onClick={handleOpen}>
+      <Button data-test='salesBtn' variant="contained" onClick={handleOpen}>
         New Sale
       </Button>
 

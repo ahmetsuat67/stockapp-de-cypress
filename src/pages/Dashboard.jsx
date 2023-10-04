@@ -111,11 +111,11 @@ function Dashboard(props) {
             sx={{ mr: 2, display: { sm: "none" } }}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography data-test="stockHeader" variant="h6" component="div" sx={{ flexGrow: 1 }}>
             STOCK APP
           </Typography>
           {currentUser && (
-            <Button color="inherit" onClick={logout}>
+            <Button data-test="logoutBtn" color="inherit" onClick={logout}>
               Logout
             </Button>
           )}

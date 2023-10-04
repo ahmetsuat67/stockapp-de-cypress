@@ -13,16 +13,17 @@ describe('firms', () => {
        cy.get("[data-test='firmPhone']").contains("Phone").click({ force: true }).type("1234567890");
        cy.get("[data-test='firmImage']").contains("Image").click({ force: true }).type("https://docs.cypress.io/img/logo/cypress-logo-dark.png");
        cy.get("[data-test='firmsSbmt']").should("be.visible").click({ force: true });
-    //    cy.get("[data-test='firmCardName']").should("be.visible");
-    //    cy.get("[data-test='firmCardAdress']").should("be.visible");
-    //    cy.get("[data-test='firmCardImage']").should("be.visible");
-    //    cy.get("[data-test='firmCardPhone']").should("be.visible");
-    //    cy.get("[data-test='editBtn']").should("be.visible").click({ force: true });
-    //    cy.get("input[name='name']").clear().type("Test Firm Edited");
-    //    cy.get("input[name='phone']").clear().type("1234567891");
-    //    cy.get("input[name='address']").clear().type("Test Address Edited");
-    //    cy.get("input[name='image']").clear().type("https://docs.cypress.io/img/logo/cypress-logo-dark.png");
-    //    cy.get("[data-test='firmsSbmt']").should("be.visible").click({ force: true });
+       cy.get("[data-test='firmCardName']").should("be.visible");
+       cy.get("[data-test='firmCardImage']").should("be.visible");
+       cy.get("[data-test='firmCardPhone']").should("be.visible");
+       cy.get("[data-test='editBtn']").should("be.visible").first().click({ force: true });
+       cy.get("input[name='name']").clear().type("Test Firm Edited");
+       cy.get("input[name='address']").clear().type("Test Address Edited");
+       cy.get("input[name='phone']").clear().type("1234567891");
+       cy.get("input[name='image']").clear().type("https://docs.cypress.io/img/logo/cypress-logo-dark.png");
+       cy.get("[data-test='firmsSbmt']").should("be.visible").click({ force: true });
+       cy.get("[data-test='deleteBtn']").should("be.visible").first().click({ force: true });
+
       
     
 

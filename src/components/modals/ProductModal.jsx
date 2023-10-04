@@ -13,15 +13,15 @@ import { useSelector } from "react-redux";
 
 export default function ProductModal({ open, handleClose, info, setInfo }) {
   const { postStockData } = useStockCall();
-  const { brands, categories } = useSelector(state => state.stock);
+  const { brands, categories } = useSelector((state) => state.stock);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setInfo({ ...info, [e.target.name]: e.target.value });
   };
 
   console.log("info", info);
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     postStockData("products", info);
@@ -37,33 +37,40 @@ export default function ProductModal({ open, handleClose, info, setInfo }) {
           handleClose();
         }}
         aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description">
+        aria-describedby="modal-modal-description"
+      >
         <Box sx={modalStyle}>
           <Box sx={flexColumn} component="form" onSubmit={handleSubmit}>
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Category</InputLabel>
+              <InputLabel data-test="productsCat" id="demo-simple-select-label">
+                Category
+              </InputLabel>
               <Select
+                data-test="selectCat"
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 name="category_id"
                 value={info.category_id}
                 label="Category"
-                onChange={handleChange}>
-                {categories?.map(item => (
+                onChange={handleChange}
+              >
+                {categories?.map((item) => (
                   <MenuItem value={item.id}>{item.name}</MenuItem>
                 ))}
               </Select>
             </FormControl>
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Brand</InputLabel>
+              <InputLabel data-test="productsBrands" id="demo-simple-select-label">Brand</InputLabel>
               <Select
+                data-test="selectBrand"
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 name="brand_id"
                 value={info.brand_id}
                 label="Brand"
-                onChange={handleChange}>
-                {brands?.map(item => (
+                onChange={handleChange}
+              >
+                {brands?.map((item) => (
                   <MenuItem value={item.id}>{item.name}</MenuItem>
                 ))}
               </Select>
@@ -76,10 +83,11 @@ export default function ProductModal({ open, handleClose, info, setInfo }) {
               variant="outlined"
               value={info.name}
               onChange={handleChange}
+              data-test="productsName"
               required
             />
 
-            <Button variant="contained" type="submit">
+            <Button variant="contained" type="submit" data-test="productsSbmt">
               Create Product
             </Button>
           </Box>

@@ -18,7 +18,7 @@ import DataTable from "./DataTable";
 // ];
 
 export default function ProductTable() {
-  const { products } = useSelector(state => state.stock);
+  const { products } = useSelector((state) => state.stock);
   const { deleteStockData } = useStockCall();
 
   const columns = [
@@ -73,9 +73,10 @@ export default function ProductTable() {
       sortable: false, //! o sütunda sort işlemlerini kapat
       minWidth: 40,
       flex: 1,
-      renderCell: params => (
+      renderCell: (params) => (
         //   console.log(params)
         <DeleteOutlineIcon
+          data-test={"deleteBtn" + params.id}
           onClick={() => deleteStockData("products", params.id)}
           sx={btnStyle}
         />

@@ -50,6 +50,7 @@ export default function BrandModal({ open, handleClose, info, setInfo }) {
             <Form>
               <Box sx={flexColumn}>
                 <TextField
+                  data-test="brandsName"
                   label="Brand Name"
                   name="name"
                   id="name"
@@ -63,6 +64,7 @@ export default function BrandModal({ open, handleClose, info, setInfo }) {
                 />
 
                 <TextField
+                  data-test="brandsImage"
                   label="Image Url"
                   name="image"
                   id="image"
@@ -75,7 +77,7 @@ export default function BrandModal({ open, handleClose, info, setInfo }) {
                   // error={touched.name && Boolean(errors.name)}//* eğer validasyon yapmak istemezsek ihtiyacımız yok.
                 />
 
-                <Button type="submit" variant="contained" size="large">
+                <Button data-test="brandsSbmt" type="submit" variant="contained" size="large">
                   {info.id ? "Update Brand" : "Submit Brand"}
                 </Button>
               </Box>
